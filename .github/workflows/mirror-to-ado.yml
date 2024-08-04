@@ -1,0 +1,24 @@
+name: Mirror to Azure DevOps
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Runs every hour
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v2
+        with:
+          repository: sivarkpocrk/ScreenshotCapture
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Mirror to Azure DevOps
+        run: |
+          git remote add azure https://dev.azure.com/YOUR_ORG/YOUR_PROJECT/_git/YOUR_REPO
+          git push azure --all
+          git push azure --tags
+        env:
+          AZURE_DEVOPS_TOKEN: ${{ secrets.AZURE_DEVOPS_TOKEN }}
