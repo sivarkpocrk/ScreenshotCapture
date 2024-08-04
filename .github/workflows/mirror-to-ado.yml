@@ -17,7 +17,7 @@ jobs:
 
       - name: Mirror to Azure DevOps
         run: |
-          git remote add azure https://dev.azure.com/YOUR_ORG/YOUR_PROJECT/_git/YOUR_REPO
+          git remote add azure https://dev.azure.com/sivanishasalearn/TestAutomation/_git/Screenshots-nodejs-automation
           git push azure --all
           git push azure --tags
         env:
