@@ -1,0 +1,14 @@
+{
+  "name": "screenshot-capture",
+  "version": "1.0.0",
+  "description": "Puppeteer script to capture screenshots",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "puppeteer": "^19.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
