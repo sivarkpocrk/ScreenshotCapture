@@ -2,7 +2,7 @@ name: Mirror to Azure DevOps
 
 on:
   schedule:
-    - cron: '* * 1 * *'  # Runs every month
+    - cron: '0 0 1 * *'  # Runs every month
 
 env:
   RUN_MIRROR_JOB: false  # Set to true to enable the job
