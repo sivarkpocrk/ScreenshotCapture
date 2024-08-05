@@ -2,10 +2,14 @@ name: Mirror to Azure DevOps
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
+    - cron: '* * 1 * *'  # Runs every month
+
+env:
+  RUN_MIRROR_JOB: false  # Set to true to enable the job
 
 jobs:
   mirror:
+    if: env.RUN_MIRROR_JOB == 'true'  # Check the environment variable
     runs-on: ubuntu-latest
     steps:
       - name: Checkout GitHub repo
